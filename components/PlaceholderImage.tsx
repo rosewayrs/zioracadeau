@@ -60,7 +60,12 @@ export default function PlaceholderImage({
           aria-hidden="true"
           loading="lazy"
           draggable={false}
-          onError={() => setImgFailed(true)}
+          onError={(e) => {
+            if (process.env.NODE_ENV !== "production") {
+              console.warn(`[PlaceholderImage] stock photo failed to load for "${label}":`, e.currentTarget.src);
+            }
+            setImgFailed(true);
+          }}
           className={`absolute inset-0 h-full w-full object-cover ${motionClass} ${toneClass}`}
         />
       )}
