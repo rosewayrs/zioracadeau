@@ -4,6 +4,7 @@ import SectionHeading from "@/components/SectionHeading";
 import EditorialSection from "@/components/EditorialSection";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import PlaceholderImage from "@/components/PlaceholderImage";
+import BackgroundVideo from "@/components/BackgroundVideo";
 import ProcessSteps from "@/components/ProcessSteps";
 
 export const metadata: Metadata = {
@@ -80,11 +81,10 @@ export default function AboutPage() {
       </section>
 
       <section className="relative h-[64vh] min-h-[420px] w-full overflow-hidden">
-        <PlaceholderImage
+        <BackgroundVideo
+          src="/video/about-lanterns.mp4"
           label="Our mission — a genuine moment of connection, mid-celebration"
-          aspect="aspect-auto"
           className="absolute inset-0 h-full w-full"
-          animated
         />
         <div className="absolute inset-0 bg-soot/50" />
         <div className="relative z-10 h-full flex items-center justify-center text-center">

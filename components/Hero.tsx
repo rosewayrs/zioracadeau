@@ -2,16 +2,15 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import PlaceholderImage from "./PlaceholderImage";
+import BackgroundVideo from "./BackgroundVideo";
 
 export default function Hero() {
   return (
     <section className="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
-      <PlaceholderImage
+      <BackgroundVideo
+        src="/video/hero-tablescape.mp4"
         label="Hero — a styled celebration in progress, table setting and a gift being placed"
-        aspect="aspect-auto"
         className="absolute inset-0 h-full w-full"
-        animated
       />
       <div className="absolute inset-0 bg-gradient-to-t from-soot/70 via-soot/10 to-soot/30" />
 

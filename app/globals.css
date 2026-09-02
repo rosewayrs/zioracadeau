@@ -2,12 +2,12 @@
   --color-ivory: #faf6ee;
   --color-cream: #f2e9d8;
   --color-sand: #e7d8bc;
-  --color-champagne: #cbae82;
-  --color-clay: #a5714b;
-  --color-rust: #8c5a3c;
-  --color-bark: #6b5642;
-  --color-espresso: #33241a;
-  --color-soot: #1c1510;
+  --color-champagne: #9a9a9a;
+  --color-clay: #4a4a4a;
+  --color-rust: #2e2e2e;
+  --color-bark: #1c1c1c;
+  --color-espresso: #111111;
+  --color-soot: #0a0a0a;
   --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
 }
 

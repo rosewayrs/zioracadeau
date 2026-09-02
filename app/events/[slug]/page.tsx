@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getEventCategoryBySlug, eventCategories } from "@/lib/data/events";
 import PlaceholderImage from "@/components/PlaceholderImage";
+import BackgroundVideo from "@/components/BackgroundVideo";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import SectionHeading from "@/components/SectionHeading";
 import CollectionCard from "@/components/CollectionCard";
@@ -22,11 +23,19 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
+// Real venue footage we have on hand only covers these two categories —
+// birthdays and corporate-events keep the stock-photo + Ken Burns treatment.
+const categoryVideo: Partial<Record<string, string>> = {
+  weddings: "/video/weddings-hero-aisle.mp4",
+  celebrations: "/video/celebrations-hero-lounge.mp4",
+};
+
 export default function EventCategoryPage({ params }: { params: { slug: string } }) {
   const category = getEventCategoryBySlug(params.slug);
   if (!category) notFound();
 
   const otherCategories = eventCategories.filter((c) => c.slug !== category.slug);
+  const videoSrc = categoryVideo[category.slug];
 
   return (
     <div className="pt-32 md:pt-40">
@@ -44,7 +53,11 @@ export default function EventCategoryPage({ params }: { params: { slug: string }
       />
 
       <section className="relative h-[64vh] min-h-[440px] w-full overflow-hidden">
-        <PlaceholderImage label={category.image} aspect="aspect-auto" className="absolute inset-0 h-full w-full" animated />
+        {videoSrc ? (
+          <BackgroundVideo src={videoSrc} label={category.image} className="absolute inset-0 h-full w-full" />
+        ) : (
+          <PlaceholderImage label={category.image} aspect="aspect-auto" className="absolute inset-0 h-full w-full" animated />
+        )}
         <div className="absolute inset-0 bg-soot/50" />
         <div className="relative z-10 h-full flex items-end">
           <div className="wrap pb-16">

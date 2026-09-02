@@ -3,6 +3,7 @@ import Link from "next/link";
 import SectionHeading from "@/components/SectionHeading";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import PlaceholderImage from "@/components/PlaceholderImage";
+import BackgroundVideo from "@/components/BackgroundVideo";
 import CollectionCard from "@/components/CollectionCard";
 import EventEnquiryForm from "@/components/EventEnquiryForm";
 import CTASection from "@/components/CTASection";
@@ -35,11 +36,10 @@ export default function EventsPage() {
       />
 
       <section className="relative h-[64vh] min-h-[440px] w-full overflow-hidden">
-        <PlaceholderImage
+        <BackgroundVideo
+          src="/video/events-hero-mandap.mp4"
           label="Events — a styled celebration mid-preparation"
-          aspect="aspect-auto"
           className="absolute inset-0 h-full w-full"
-          animated
         />
         <div className="absolute inset-0 bg-soot/50" />
         <div className="relative z-10 h-full flex items-end">
