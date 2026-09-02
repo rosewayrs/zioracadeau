@@ -11,6 +11,8 @@ import JournalCard from "@/components/JournalCard";
 import InstagramGrid from "@/components/InstagramGrid";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import PlaceholderImage from "@/components/PlaceholderImage";
+import StatementBand from "@/components/StatementBand";
+import MarqueeStrip from "@/components/MarqueeStrip";
 import { eventCategories } from "@/lib/data/events";
 import { edits } from "@/lib/data/collections";
 import { products } from "@/lib/data/products";
@@ -42,6 +44,10 @@ export default function HomePage() {
       {/* 01 — Hero */}
       <Hero />
 
+      <MarqueeStrip
+        items={["Weddings", "Celebrations", "Birthdays", "Corporate Events", "Custom Gifting", "Corporate Gifting"]}
+      />
+
       {/* 02 — Brand Statement */}
       <section className="wrap py-28 md:py-40">
         <div className="max-w-3xl">
@@ -66,9 +72,11 @@ export default function HomePage() {
         </div>
       </section>
 
+      <StatementBand text="The Art of Celebration" />
+
       {/* 03 — The Art of Celebration (Events) */}
-      <section id="events" className="wrap pb-28 md:pb-40">
-        <SectionHeading eyebrow="Events" title="The Art of Celebration, Paired With Giving" />
+      <section id="events" className="wrap py-28 md:py-40">
+        <SectionHeading eyebrow="Events" title="Four Ways We Celebrate, Each Paired With Giving" />
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
           {eventCategories.map((cat, i) => (
             <CollectionCard
@@ -123,7 +131,11 @@ export default function HomePage() {
             </div>
           </RevealOnScroll>
           <RevealOnScroll delay={0.1}>
-            <PlaceholderImage label="Paired With Giving — an event's gifting moment, gift beside a place setting" aspect="aspect-[4/5]" />
+            <PlaceholderImage
+              label="Paired With Giving — an event's gifting moment, gift beside a place setting"
+              aspect="aspect-[4/5]"
+              animated
+            />
           </RevealOnScroll>
         </div>
       </section>
@@ -235,6 +247,7 @@ export default function HomePage() {
           label="Emotional statement — a genuine reaction, mid-celebration"
           aspect="aspect-auto"
           className="absolute inset-0 h-full w-full"
+          animated
         />
         <div className="absolute inset-0 bg-soot/45" />
         <div className="relative z-10 h-full flex items-center justify-center text-center">
@@ -246,9 +259,10 @@ export default function HomePage() {
       </section>
 
       {/* 12 — Testimonials */}
+      <StatementBand text="Testimonials" />
       <section className="wrap py-28 md:py-40">
-        <SectionHeading eyebrow="Testimonials" title="Words From Those We've Celebrated With" />
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+        <p className="eyebrow text-center mb-16">Words From Those We've Celebrated With</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
           {testimonials.map((t, i) => (
             <Testimonial key={t.name + i} testimonial={t} delay={i * 0.1} />
           ))}
@@ -275,11 +289,17 @@ export default function HomePage() {
       </section>
 
       {/* 14 — Instagram */}
+      <StatementBand text="Follow the Celebration" />
       <section className="wrap py-28 md:py-40">
-        <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
-          <SectionHeading eyebrow="@zioracadeau" title="From the World of Zioracadeau" />
+        <div className="text-center mb-14">
+          <p className="eyebrow">@zioracadeau</p>
           <RevealOnScroll delay={0.1}>
-            <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="btn-ghost text-espresso">
+            <a
+              href={instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-ghost text-espresso mt-4 inline-block"
+            >
               Follow Along
             </a>
           </RevealOnScroll>
@@ -295,7 +315,8 @@ export default function HomePage() {
         primaryHref="/events"
         secondaryLabel="Create a Gift"
         secondaryHref="/custom-gift"
-        image="Final CTA — dramatic full-screen celebration and gifting moment"
+        image="Final CTA — dramatic full-screen celebration and gifting moment, desaturated editorial treatment"
+        tone="mono"
       />
     </>
   );

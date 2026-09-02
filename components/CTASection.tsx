@@ -11,6 +11,7 @@ export default function CTASection({
   secondaryLabel,
   secondaryHref,
   image,
+  tone = "color",
 }: {
   eyebrow?: string;
   title: string;
@@ -20,10 +21,17 @@ export default function CTASection({
   secondaryLabel?: string;
   secondaryHref?: string;
   image: string;
+  tone?: "color" | "mono";
 }) {
   return (
     <section className="relative h-[86vh] min-h-[520px] w-full overflow-hidden">
-      <PlaceholderImage label={image} aspect="aspect-auto" className="absolute inset-0 h-full w-full" />
+      <PlaceholderImage
+        label={image}
+        aspect="aspect-auto"
+        className="absolute inset-0 h-full w-full"
+        animated
+        tone={tone}
+      />
       <div className="absolute inset-0 bg-soot/55" />
       <div className="relative z-10 h-full flex items-center justify-center text-center">
         <RevealOnScroll className="wrap max-w-3xl mx-auto">

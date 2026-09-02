@@ -11,6 +11,7 @@ export default function Hero() {
         label="Hero — a styled celebration in progress, table setting and a gift being placed"
         aspect="aspect-auto"
         className="absolute inset-0 h-full w-full"
+        animated
       />
       <div className="absolute inset-0 bg-gradient-to-t from-soot/70 via-soot/10 to-soot/30" />
 

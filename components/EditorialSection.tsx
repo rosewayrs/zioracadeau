@@ -27,7 +27,7 @@ export default function EditorialSection({
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
       <RevealOnScroll className={imageSide === "left" ? "lg:order-1" : "lg:order-2"}>
-        <PlaceholderImage label={image} aspect="aspect-[4/5]" />
+        <PlaceholderImage label={image} aspect="aspect-[4/5]" animated />
       </RevealOnScroll>
       <RevealOnScroll
         delay={0.1}

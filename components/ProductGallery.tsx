@@ -8,7 +8,7 @@ export default function ProductGallery({ images }: { images: string[] }) {
 
   return (
     <div>
-      <PlaceholderImage label={images[active]} aspect="aspect-[4/5]" />
+      <PlaceholderImage label={images[active]} aspect="aspect-[4/5]" animated />
       {images.length > 1 && (
         <div className="grid grid-cols-3 gap-3 mt-3">
           {images.map((img, i) => (

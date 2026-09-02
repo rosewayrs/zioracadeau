@@ -44,7 +44,7 @@ export default function EventCategoryPage({ params }: { params: { slug: string }
       />
 
       <section className="relative h-[64vh] min-h-[440px] w-full overflow-hidden">
-        <PlaceholderImage label={category.image} aspect="aspect-auto" className="absolute inset-0 h-full w-full" />
+        <PlaceholderImage label={category.image} aspect="aspect-auto" className="absolute inset-0 h-full w-full" animated />
         <div className="absolute inset-0 bg-soot/50" />
         <div className="relative z-10 h-full flex items-end">
           <div className="wrap pb-16">
@@ -74,7 +74,7 @@ export default function EventCategoryPage({ params }: { params: { slug: string }
             </div>
           </RevealOnScroll>
           <RevealOnScroll delay={0.1}>
-            <PlaceholderImage label={`${category.title} — [INSERT PAST PORTFOLIO IMAGE]`} aspect="aspect-[4/5]" />
+            <PlaceholderImage label={`${category.title} — [INSERT PAST PORTFOLIO IMAGE]`} aspect="aspect-[4/5]" animated />
           </RevealOnScroll>
         </div>
       </section>
@@ -93,7 +93,7 @@ export default function EventCategoryPage({ params }: { params: { slug: string }
             </Link>
           </RevealOnScroll>
           <RevealOnScroll delay={0.1}>
-            <PlaceholderImage label={`${category.title} — paired gift detail`} aspect="aspect-[4/5]" />
+            <PlaceholderImage label={`${category.title} — paired gift detail`} aspect="aspect-[4/5]" animated />
           </RevealOnScroll>
         </div>
       </section>

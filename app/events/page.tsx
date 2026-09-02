@@ -6,6 +6,8 @@ import PlaceholderImage from "@/components/PlaceholderImage";
 import CollectionCard from "@/components/CollectionCard";
 import EventEnquiryForm from "@/components/EventEnquiryForm";
 import CTASection from "@/components/CTASection";
+import MarqueeStrip from "@/components/MarqueeStrip";
+import StatementBand from "@/components/StatementBand";
 import { eventCategories } from "@/lib/data/events";
 
 export const metadata: Metadata = {
@@ -37,6 +39,7 @@ export default function EventsPage() {
           label="Events — a styled celebration mid-preparation"
           aspect="aspect-auto"
           className="absolute inset-0 h-full w-full"
+          animated
         />
         <div className="absolute inset-0 bg-soot/50" />
         <div className="relative z-10 h-full flex items-end">
@@ -55,6 +58,8 @@ export default function EventsPage() {
           </div>
         </div>
       </section>
+
+      <MarqueeStrip items={["Weddings", "Celebrations", "Birthdays", "Corporate Events"]} />
 
       <section className="wrap py-28 md:py-40">
         <SectionHeading eyebrow="What We Design" title="Four Ways We Celebrate" />
@@ -95,6 +100,8 @@ export default function EventsPage() {
           </RevealOnScroll>
         </div>
       </section>
+
+      <StatementBand text="Start Planning" />
 
       <section id="plan" className="wrap py-28 md:py-40 scroll-mt-24">
         <SectionHeading eyebrow="Start Planning" title="Tell Us About Your Event" />

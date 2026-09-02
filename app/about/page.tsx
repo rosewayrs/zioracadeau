@@ -84,6 +84,7 @@ export default function AboutPage() {
           label="Our mission — a genuine moment of connection, mid-celebration"
           aspect="aspect-auto"
           className="absolute inset-0 h-full w-full"
+          animated
         />
         <div className="absolute inset-0 bg-soot/50" />
         <div className="relative z-10 h-full flex items-center justify-center text-center">

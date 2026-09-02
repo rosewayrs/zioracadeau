@@ -190,9 +190,12 @@
   }
 
   /* ---------- Placeholder image texture ---------- */
-  .placeholder-surface {
+  .placeholder-frame {
     position: relative;
     overflow: hidden;
+  }
+
+  .placeholder-surface {
     background:
       radial-gradient(120% 140% at 15% 10%, rgba(203, 174, 130, 0.55), transparent 55%),
       radial-gradient(130% 130% at 85% 90%, rgba(140, 90, 60, 0.45), transparent 55%),
@@ -241,8 +244,37 @@
     animation: marquee 40s linear infinite;
   }
 
+  /* ---------- Cinematic motion for full-bleed imagery ---------- */
+  @keyframes kenburns {
+    0% {
+      transform: scale(1) translate3d(0, 0, 0);
+    }
+    100% {
+      transform: scale(1.1) translate3d(-1.5%, -1.5%, 0);
+    }
+  }
+
+  .placeholder-kenburns {
+    animation: kenburns 24s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+
+  .placeholder-mono {
+    filter: grayscale(0.9) contrast(1.08) brightness(0.9);
+  }
+
+  /* ---------- Full-bleed statement bands ---------- */
+  .statement-band-text {
+    font-family: var(--font-display), serif;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
   @media (prefers-reduced-motion: reduce) {
-    .marquee-track {
+    .marquee-track,
+    .placeholder-kenburns {
       animation: none;
     }
   }
