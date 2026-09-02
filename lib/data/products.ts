@@ -10,8 +10,8 @@ export const products: Product[] = [
       "A softly layered gift box built around scent, warmth and stillness — for the person who deserves a slower morning.",
     story:
       "[INSERT PRODUCT STORY — the inspiration behind this edit, the pieces inside, and why each one was chosen]",
-    price: 68000,
-    currency: "NGN",
+    price: 75,
+    currency: "USD",
     images: ["Amber Hour Box — flat lay", "Amber Hour Box — ribbon detail", "Amber Hour Box — being opened"],
     category: "self-care",
     tags: ["self-care", "just-because", "warm"],
@@ -27,8 +27,8 @@ export const products: Product[] = [
     description:
       "Florals, a handwritten note and a single considered object — composed for the moments that ask for more than words.",
     story: "[INSERT PRODUCT STORY]",
-    price: 145000,
-    currency: "NGN",
+    price: 175,
+    currency: "USD",
     images: ["For Her Always — presentation", "For Her Always — florals", "For Her Always — card detail"],
     category: "love",
     tags: ["love", "anniversary", "proposal"],
@@ -44,8 +44,8 @@ export const products: Product[] = [
     description:
       "Soft textures and considered keepsakes for the family beginning a new chapter — as much for mother as for baby.",
     story: "[INSERT PRODUCT STORY]",
-    price: 92000,
-    currency: "NGN",
+    price: 110,
+    currency: "USD",
     images: ["Welcome Little One — box open", "Welcome Little One — textures", "Welcome Little One — detail"],
     category: "baby",
     tags: ["baby", "new mother", "beginnings"],
@@ -61,8 +61,8 @@ export const products: Product[] = [
     description:
       "A composed, brand-ready presentation for the people who move your business forward.",
     story: "[INSERT PRODUCT STORY]",
-    price: 78000,
-    currency: "NGN",
+    price: 85,
+    currency: "USD",
     images: ["Boardroom Edit — packaging", "Boardroom Edit — contents", "Boardroom Edit — branding detail"],
     category: "corporate",
     tags: ["corporate", "client gifting", "team"],
@@ -78,8 +78,8 @@ export const products: Product[] = [
     description:
       "An elevated keepsake edit for the people standing closest on the big day.",
     story: "[INSERT PRODUCT STORY]",
-    price: 110000,
-    currency: "NGN",
+    price: 135,
+    currency: "USD",
     images: ["Say I Do — bridal party set", "Say I Do — detail", "Say I Do — presentation"],
     category: "wedding",
     tags: ["wedding", "bridal party", "celebration"],
@@ -95,8 +95,8 @@ export const products: Product[] = [
     description:
       "A small, beautifully composed gesture for the people who don't need a reason.",
     story: "[INSERT PRODUCT STORY]",
-    price: 42000,
-    currency: "NGN",
+    price: 48,
+    currency: "USD",
     images: ["Just Because — flat lay", "Just Because — ribbon", "Just Because — card"],
     category: "just-because",
     tags: ["just-because", "thank you"],
@@ -112,8 +112,8 @@ export const products: Product[] = [
     description:
       "Bright, considered and a little indulgent — for marking another year with real intention.",
     story: "[INSERT PRODUCT STORY]",
-    price: 58000,
-    currency: "NGN",
+    price: 65,
+    currency: "USD",
     images: ["Another Beautiful Year — box", "Another Beautiful Year — detail", "Another Beautiful Year — candle"],
     category: "birthday",
     tags: ["birthday", "celebration"],
@@ -129,8 +129,8 @@ export const products: Product[] = [
     description:
       "Fewer, better things — composed for someone with impeccable taste and no need for anything loud.",
     story: "[INSERT PRODUCT STORY]",
-    price: 165000,
-    currency: "NGN",
+    price: 195,
+    currency: "USD",
     images: ["Quiet Luxury Edit — presentation", "Quiet Luxury Edit — texture", "Quiet Luxury Edit — detail"],
     category: "self-care",
     tags: ["luxury", "self-care", "just-because"],
@@ -151,8 +151,8 @@ export function getRelatedProducts(product: Product, count = 3) {
     .slice(0, count);
 }
 
-export function formatPrice(price: number, currency = "NGN") {
-  return new Intl.NumberFormat("en-NG", {
+export function formatPrice(price: number, currency = "USD") {
+  return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency,
     maximumFractionDigits: 0,

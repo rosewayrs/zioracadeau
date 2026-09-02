@@ -29,6 +29,11 @@ import { getStockPhotoUrl } from "@/lib/data/stockImages";
  *
  * `tone="mono"` applies a desaturated, slightly darkened treatment for a
  * quieter, more editorial closing moment (e.g. a final call-to-action).
+ *
+ * `overrideSrc` swaps in a specific real, cleared image (e.g. a real
+ * Zioracadeau event photo the client has confirmed rights to use) instead of
+ * the automatic stock-photo lookup — used sparingly, only where a real photo
+ * has been explicitly supplied and approved.
  */
 export default function PlaceholderImage({
   label,
@@ -37,6 +42,7 @@ export default function PlaceholderImage({
   animated = false,
   tone = "color",
   useStock = true,
+  overrideSrc,
 }: {
   label: string;
   className?: string;
@@ -44,6 +50,7 @@ export default function PlaceholderImage({
   animated?: boolean;
   tone?: "color" | "mono";
   useStock?: boolean;
+  overrideSrc?: string;
 }) {
   const [imgFailed, setImgFailed] = useState(false);
   const showImg = useStock && !imgFailed;
@@ -55,7 +62,7 @@ export default function PlaceholderImage({
       <div className={`placeholder-surface absolute inset-0 ${motionClass} ${toneClass}`} />
       {showImg && (
         <img
-          src={getStockPhotoUrl(label)}
+          src={overrideSrc ?? getStockPhotoUrl(label)}
           alt=""
           aria-hidden="true"
           loading="lazy"

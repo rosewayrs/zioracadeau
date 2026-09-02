@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const occasions = ["Client Gifting", "Employee Appreciation", "Executive Gifting", "Conference / Event", "End-of-Year", "Other"];
-const budgets = ["Under ₦500,000", "₦500,000 – ₦2,000,000", "₦2,000,000 – ₦5,000,000", "₦5,000,000+"];
+const budgets = ["Under $2,500", "$2,500 – $10,000", "$10,000 – $25,000", "$25,000+"];
 
 export default function CorporateForm() {
   const [submitted, setSubmitted] = useState(false);

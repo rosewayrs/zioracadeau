@@ -8,11 +8,13 @@ export default function CollectionCard({
   href,
   size = "default",
   delay = 0,
+  imageSrc,
 }: {
   collection: Collection;
   href: string;
   size?: "default" | "large";
   delay?: number;
+  imageSrc?: string;
 }) {
   return (
     <RevealOnScroll delay={delay} className="h-full">
@@ -22,6 +24,7 @@ export default function CollectionCard({
             <PlaceholderImage
               label={collection.image}
               aspect={size === "large" ? "aspect-[4/5] md:aspect-[3/4]" : "aspect-[4/5]"}
+              overrideSrc={imageSrc}
             />
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-soot/60 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-700" />

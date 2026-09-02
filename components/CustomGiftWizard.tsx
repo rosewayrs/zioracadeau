@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const recipientOptions = ["Partner", "Friend", "Parent", "Child", "Colleague", "Client", "Employee", "Other"];
 const occasionOptions = ["Birthday", "Anniversary", "Wedding", "Baby", "Corporate", "Thank You", "Celebration", "Just Because", "Other"];
 const interestOptions = ["Beauty", "Food", "Fashion", "Wellness", "Travel", "Home", "Technology", "Books", "Experiences", "Other"];
-const budgetOptions = ["Under ₦50,000", "₦50,000 – ₦100,000", "₦100,000 – ₦250,000", "₦250,000+"];
+const budgetOptions = ["Under $75", "$75 – $150", "$150 – $350", "$350+"];
 
 interface FormState {
   recipient: string;

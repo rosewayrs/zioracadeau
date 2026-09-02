@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { eventCategories } from "@/lib/data/events";
 
-const budgets = ["Under ₦1,000,000", "₦1,000,000 – ₦3,000,000", "₦3,000,000 – ₦8,000,000", "₦8,000,000+"];
+const budgets = ["Under $5,000", "$5,000 – $15,000", "$15,000 – $40,000", "$40,000+"];
 
 export default function EventEnquiryForm({ defaultEventType }: { defaultEventType?: string }) {
   const [submitted, setSubmitted] = useState(false);

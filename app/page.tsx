@@ -91,6 +91,7 @@ export default function HomePage() {
               href={`/events/${cat.slug}`}
               size="large"
               delay={i * 0.08}
+              imageSrc={cat.slug === "weddings" ? "/images/weddings-featured.jpg" : undefined}
             />
           ))}
         </div>
