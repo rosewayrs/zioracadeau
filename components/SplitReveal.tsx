@@ -29,8 +29,15 @@ export default function SplitReveal({
   mode?: "onload" | "onview";
 }) {
   const lines = text.split("\n");
+  // Same viewport margin as RevealOnScroll (proven reliable elsewhere on the
+  // site) rather than a percentage margin, which can shrink the detection
+  // window enough that a large heading never registers as intersecting —
+  // leaving it stuck at opacity:0 ("vacant space") instead of revealing.
+  // Deliberately NOT `once: true`: if a heading is ever missed on its first
+  // pass (a fast scroll, a resize), it gets another chance next time it's in
+  // view rather than staying blank for good.
   const viewProps =
-    mode === "onview" ? { whileInView: "visible", viewport: { once: true, margin: "-10% 0px" } } : { animate: "visible" };
+    mode === "onview" ? { whileInView: "visible", viewport: { margin: "-80px" } } : { animate: "visible" };
 
   return (
     <Tag className={className}>
