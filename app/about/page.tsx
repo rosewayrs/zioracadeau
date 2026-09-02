@@ -33,7 +33,11 @@ export default function AboutPage() {
       <section className="bg-espresso text-ivory py-28 md:py-40">
         <div className="wrap grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <RevealOnScroll>
-            <PlaceholderImage label="Founder portrait — [INSERT FOUNDER PHOTOGRAPH]" aspect="aspect-[4/5]" useStock={false} />
+            <PlaceholderImage
+              label="Founder portrait"
+              aspect="aspect-[4/5]"
+              overrideSrc="/images/founder.jpg"
+            />
           </RevealOnScroll>
           <RevealOnScroll delay={0.1}>
             <p className="eyebrow text-champagne mb-5">In Her Own Words</p>

@@ -1,10 +1,16 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { primaryNav, instagramUrl } from "@/lib/data/nav";
 import CartButton from "./CartButton";
 import MobileMenu from "./MobileMenu";
+
+const dropIn = {
+  initial: { opacity: 0, y: -14 },
+  animate: { opacity: 1, y: 0 },
+};
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -33,16 +39,21 @@ export default function Navbar() {
       }`}
     >
       <div className="wrap flex items-center justify-between h-20 md:h-24">
-        <Link
-          href="/"
-          className={`font-display text-lg md:text-xl tracking-[0.18em] uppercase transition-colors ${
-            scrolled ? "text-espresso" : "text-ivory"
-          }`}
-        >
-          Zioracadeau
-        </Link>
+        <motion.div initial={dropIn.initial} animate={dropIn.animate} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>
+          <Link
+            href="/"
+            className={`font-display text-lg md:text-xl tracking-[0.18em] uppercase transition-colors ${
+              scrolled ? "text-espresso" : "text-ivory"
+            }`}
+          >
+            Zioracadeau
+          </Link>
+        </motion.div>
 
-        <nav
+        <motion.nav
+          initial={dropIn.initial}
+          animate={dropIn.animate}
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           className={`hidden md:flex items-center gap-9 text-[0.7rem] tracking-[0.18em] uppercase font-medium transition-colors ${
             scrolled ? "text-espresso" : "text-ivory"
           }`}
@@ -52,9 +63,12 @@ export default function Navbar() {
               {item.label}
             </Link>
           ))}
-        </nav>
+        </motion.nav>
 
-        <div
+        <motion.div
+          initial={dropIn.initial}
+          animate={dropIn.animate}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className={`hidden md:flex items-center gap-7 transition-colors ${
             scrolled ? "text-espresso" : "text-ivory"
           }`}
@@ -71,7 +85,7 @@ export default function Navbar() {
           <Link href="/events" className={scrolled ? "btn btn-primary" : "btn btn-outline-light"}>
             Start Planning
           </Link>
-        </div>
+        </motion.div>
 
         <div className="flex items-center gap-5 md:hidden">
           <CartButton light={!scrolled} />
