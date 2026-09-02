@@ -68,8 +68,8 @@ export default function Navbar() {
             Instagram
           </a>
           <CartButton light={!scrolled} />
-          <Link href="/custom-gift" className={scrolled ? "btn btn-primary" : "btn btn-outline-light"}>
-            Create a Gift
+          <Link href="/events" className={scrolled ? "btn btn-primary" : "btn btn-outline-light"}>
+            Start Planning
           </Link>
         </div>
 

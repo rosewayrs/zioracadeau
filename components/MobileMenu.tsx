@@ -64,11 +64,14 @@ export default function MobileMenu({
           </motion.nav>
           <div className="wrap mt-10 flex flex-col gap-4">
             <Link
-              href="/custom-gift"
+              href="/events"
               onClick={onClose}
               className="btn btn-outline-light w-full"
             >
-              Create a Gift
+              Start Planning
+            </Link>
+            <Link href="/custom-gift" onClick={onClose} className="eyebrow text-ivory/70">
+              Or Create a Gift →
             </Link>
             <a
               href={instagramUrl}

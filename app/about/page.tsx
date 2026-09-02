@@ -9,7 +9,7 @@ import ProcessSteps from "@/components/ProcessSteps";
 export const metadata: Metadata = {
   title: "Our Story",
   description:
-    "The story behind Zioracadeau — a gifting house built on the belief that the best gifts are expressions, not objects.",
+    "The story behind Zioracadeau — an events and gifting house built on the belief that celebrations should be designed, and the gifts that go with them should be just as considered.",
 };
 
 export default function AboutPage() {
@@ -19,10 +19,12 @@ export default function AboutPage() {
         <SectionHeading eyebrow="Our Story" title="The Story of Zioracadeau" size="display-1" />
         <RevealOnScroll delay={0.1} className="mt-8 max-w-xl">
           <p className="text-bark text-lg leading-relaxed">
-            Zioracadeau is a gifting house for people who take giving
-            seriously — built on the belief that the best gifts aren't
-            simply beautiful objects, but expressions of love, appreciation,
-            celebration, thought and connection.
+            Zioracadeau is an events and gifting house for people who take
+            celebrating seriously — built on the belief that a beautifully
+            designed event and a thoughtfully chosen gift come from the same
+            instinct, and belong together. We design the wedding, the
+            milestone birthday, the corporate gala — and pair each one with
+            gifting that carries the same care.
           </p>
         </RevealOnScroll>
       </section>
@@ -36,8 +38,8 @@ export default function AboutPage() {
             <p className="eyebrow text-champagne mb-5">In Her Own Words</p>
             <h2 className="display-2 text-ivory mb-6">Why Zioracadeau Exists</h2>
             <div className="text-ivory/75 leading-relaxed max-w-md space-y-4">
-              <p>[FOUNDER STORY GOES HERE — the personal moment or realisation that led to starting Zioracadeau]</p>
-              <p>[INSERT FOUNDER'S PHILOSOPHY OF GIFTING]</p>
+              <p>[FOUNDER STORY GOES HERE — the personal moment or realisation that led to starting Zioracadeau, and to pairing events with gifting]</p>
+              <p>[INSERT FOUNDER'S PHILOSOPHY OF EVENTS AND GIFTING]</p>
               <p>[INSERT WHAT THE FOUNDER WANTS EVERY CLIENT TO FEEL]</p>
             </div>
           </RevealOnScroll>
@@ -48,24 +50,29 @@ export default function AboutPage() {
         <EditorialSection
           eyebrow="What Makes Us Different"
           title={"Considered,\nNot Generic."}
-          image="Our approach — a gift box being composed by hand"
+          image="Our approach — an event being styled and a gift being composed, side by side"
+          cta="Plan an Event"
+          ctaHref="/events"
+          ctaSecondary="Create a Gift"
+          ctaSecondaryHref="/custom-gift"
         >
           <p>
-            We don't work from a fixed catalogue of "gift sets." Every piece
-            is chosen with a specific person, occasion and feeling in mind —
-            whether that's a single curated box or a fully custom brief.
+            We don't work from a fixed catalogue of "packages" or "gift
+            sets." Every event and every gift is composed for a specific
+            person, occasion and feeling — whether that's a full wedding
+            brief or a single curated box.
           </p>
           <p>
-            Presentation is never an afterthought. Ribbon, box, note and
-            timing are all part of the gift — because the moment of opening
-            matters as much as what's inside.
+            Presentation is never an afterthought — on either side of the
+            house. Tablescape or ribbon, seating plan or note, timing
+            always matters as much as what's inside.
           </p>
         </EditorialSection>
       </section>
 
       <section className="bg-cream py-28 md:py-40">
         <div className="wrap">
-          <SectionHeading eyebrow="How It Works" title="The Gifting Process" />
+          <SectionHeading eyebrow="How It Works" title="From Brief to Celebration" />
           <div className="mt-16">
             <ProcessSteps />
           </div>
@@ -74,7 +81,7 @@ export default function AboutPage() {
 
       <section className="relative h-[64vh] min-h-[420px] w-full overflow-hidden">
         <PlaceholderImage
-          label="Our mission — a genuine moment of connection through gifting"
+          label="Our mission — a genuine moment of connection, mid-celebration"
           aspect="aspect-auto"
           className="absolute inset-0 h-full w-full"
         />
@@ -82,11 +89,17 @@ export default function AboutPage() {
         <div className="relative z-10 h-full flex items-center justify-center text-center">
           <RevealOnScroll className="wrap max-w-2xl mx-auto">
             <p className="display-2 text-ivory">
-              Every gift we send is a small bet on the strength of a relationship.
+              Every event we design, and every gift we send, is a small bet
+              on the strength of a relationship.
             </p>
-            <Link href="/custom-gift" className="btn btn-outline-light mt-10 inline-flex">
-              Create a Gift
-            </Link>
+            <div className="flex flex-wrap justify-center gap-4 mt-10">
+              <Link href="/events" className="btn btn-outline-light">
+                Plan an Event
+              </Link>
+              <Link href="/custom-gift" className="btn-ghost text-ivory border-ivory/60 hover:text-champagne hover:border-champagne">
+                Create a Gift
+              </Link>
+            </div>
           </RevealOnScroll>
         </div>
       </section>

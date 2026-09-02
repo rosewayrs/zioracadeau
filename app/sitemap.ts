@@ -1,12 +1,18 @@
 import { MetadataRoute } from "next";
 import { products } from "@/lib/data/products";
 import { journalArticles } from "@/lib/data/journal";
+import { eventCategories } from "@/lib/data/events";
 
 const base = "https://zioracadeau.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/shop", "/custom-gift", "/corporate", "/about", "/journal"].map((path) => ({
+  const staticRoutes = ["", "/events", "/shop", "/custom-gift", "/corporate", "/about", "/journal"].map((path) => ({
     url: `${base}${path}`,
+    lastModified: new Date(),
+  }));
+
+  const eventRoutes = eventCategories.map((e) => ({
+    url: `${base}/events/${e.slug}`,
     lastModified: new Date(),
   }));
 
@@ -20,5 +26,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(a.date),
   }));
 
-  return [...staticRoutes, ...productRoutes, ...journalRoutes];
+  return [...staticRoutes, ...eventRoutes, ...productRoutes, ...journalRoutes];
 }

@@ -40,6 +40,19 @@ export interface Collection {
   image: string;
 }
 
+export type EventCategorySlug = "weddings" | "celebrations" | "birthdays" | "corporate-events";
+
+export interface EventCategory {
+  slug: EventCategorySlug;
+  title: string;
+  eyebrow: string;
+  description: string;
+  longDescription: string[];
+  image: string;
+  pairedGiftingNote: string;
+  pairedShopCategory: ShopCategory;
+}
+
 export interface JournalArticle {
   id: string;
   title: string;

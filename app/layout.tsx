@@ -24,23 +24,23 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://zioracadeau.vercel.app"),
   title: {
-    default: "Zioracadeau | The Art of Thoughtful Gifting",
+    default: "Zioracadeau | Events, Designed. Gifts, Paired.",
     template: "%s | Zioracadeau",
   },
   description:
-    "Thoughtfully curated gifts and personalised gifting experiences designed to make every celebration memorable.",
+    "A luxury events and gifting house — designing weddings, celebrations and corporate events, and pairing every one with thoughtfully curated, personalised gifts.",
   openGraph: {
-    title: "Zioracadeau | The Art of Thoughtful Gifting",
+    title: "Zioracadeau | Events, Designed. Gifts, Paired.",
     description:
-      "Thoughtfully curated gifts and personalised gifting experiences designed to make every celebration memorable.",
+      "A luxury events and gifting house — designing weddings, celebrations and corporate events, and pairing every one with thoughtfully curated, personalised gifts.",
     siteName: "Zioracadeau",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zioracadeau | The Art of Thoughtful Gifting",
+    title: "Zioracadeau | Events, Designed. Gifts, Paired.",
     description:
-      "Thoughtfully curated gifts and personalised gifting experiences designed to make every celebration memorable.",
+      "A luxury events and gifting house — designing weddings, celebrations and corporate events, and pairing every one with thoughtfully curated, personalised gifts.",
   },
 };
 

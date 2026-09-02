@@ -11,6 +11,8 @@ export default function EditorialSection({
   imageSide = "right",
   cta,
   ctaHref,
+  ctaSecondary,
+  ctaSecondaryHref,
 }: {
   eyebrow?: string;
   title: string;
@@ -19,6 +21,8 @@ export default function EditorialSection({
   imageSide?: "left" | "right";
   cta?: string;
   ctaHref?: string;
+  ctaSecondary?: string;
+  ctaSecondaryHref?: string;
 }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -32,11 +36,20 @@ export default function EditorialSection({
         {eyebrow && <p className="eyebrow mb-5">{eyebrow}</p>}
         <h2 className="display-2 mb-6 whitespace-pre-line">{title}</h2>
         <div className="text-bark leading-relaxed max-w-md space-y-4">{children}</div>
-        {cta && ctaHref && (
-          <Link href={ctaHref} className="btn btn-outline mt-8 inline-flex">
-            {cta}
-          </Link>
-        )}
+        {(cta && ctaHref) || (ctaSecondary && ctaSecondaryHref) ? (
+          <div className="flex flex-wrap gap-4 mt-8">
+            {cta && ctaHref && (
+              <Link href={ctaHref} className="btn btn-outline inline-flex">
+                {cta}
+              </Link>
+            )}
+            {ctaSecondary && ctaSecondaryHref && (
+              <Link href={ctaSecondaryHref} className="btn-ghost text-espresso inline-flex">
+                {ctaSecondary}
+              </Link>
+            )}
+          </div>
+        ) : null}
       </RevealOnScroll>
     </div>
   );

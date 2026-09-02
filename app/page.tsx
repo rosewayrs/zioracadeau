@@ -11,7 +11,8 @@ import JournalCard from "@/components/JournalCard";
 import InstagramGrid from "@/components/InstagramGrid";
 import RevealOnScroll from "@/components/RevealOnScroll";
 import PlaceholderImage from "@/components/PlaceholderImage";
-import { occasions, edits } from "@/lib/data/collections";
+import { eventCategories } from "@/lib/data/events";
+import { edits } from "@/lib/data/collections";
 import { products } from "@/lib/data/products";
 import { testimonials } from "@/lib/data/testimonials";
 import { journalArticles } from "@/lib/data/journal";
@@ -31,7 +32,7 @@ export default function HomePage() {
             "@type": "Organization",
             name: "Zioracadeau",
             description:
-              "A luxury gifting house offering thoughtfully curated gifts and personalised gifting experiences.",
+              "A luxury events and gifting house — designing celebrations and pairing them with thoughtfully curated, personalised gifts.",
             url: "https://zioracadeau.vercel.app",
             sameAs: [instagramUrl],
           }),
@@ -46,60 +47,89 @@ export default function HomePage() {
         <div className="max-w-3xl">
           <SectionHeading
             eyebrow="Our Philosophy"
-            title={"More Than a Gift.\nA Memory in the Making."}
+            title={"We Don't Just Plan Events.\nWe Don't Just Give Gifts."}
             size="display-1"
           />
           <RevealOnScroll delay={0.15} className="mt-10 space-y-5 text-bark text-base md:text-lg leading-relaxed max-w-xl">
             <p>
-              Zioracadeau believes the best gifts are not simply beautiful
-              objects. They are expressions — of love, appreciation,
-              celebration, thought and connection.
+              Zioracadeau began as a gifting house — built on the belief that
+              the best gifts are not simply beautiful objects, but
+              expressions of love, appreciation, celebration and connection.
             </p>
             <p>
-              We exist for the people who want their gifting to feel as
-              intentional as everything else they do — considered from the
-              first idea to the moment it's opened.
+              We've since grown into something more. We now design the
+              celebrations themselves — the wedding, the milestone birthday,
+              the corporate gala — and pair every one with gifting composed
+              with the same care as the event itself.
             </p>
           </RevealOnScroll>
         </div>
       </section>
 
-      {/* 03 — The World of Zioracadeau */}
-      <section id="occasions" className="wrap pb-28 md:pb-40">
-        <SectionHeading eyebrow="Occasions" title="The World of Zioracadeau" />
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-5">
-          <div className="md:col-span-4">
+      {/* 03 — The Art of Celebration (Events) */}
+      <section id="events" className="wrap pb-28 md:pb-40">
+        <SectionHeading eyebrow="Events" title="The Art of Celebration, Paired With Giving" />
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+          {eventCategories.map((cat, i) => (
             <CollectionCard
-              collection={occasions[0]}
-              href={`/shop?category=birthday`}
+              key={cat.slug}
+              collection={{
+                id: cat.slug,
+                title: cat.title,
+                slug: cat.slug,
+                description: cat.description,
+                image: cat.image,
+              }}
+              href={`/events/${cat.slug}`}
               size="large"
+              delay={i * 0.08}
             />
-          </div>
-          <div className="md:col-span-2">
-            <CollectionCard collection={occasions[1]} href={`/shop?category=love`} delay={0.1} />
-          </div>
-          <div className="md:col-span-2">
-            <CollectionCard collection={occasions[2]} href={`/shop?category=baby`} delay={0.15} />
-          </div>
-          <div className="md:col-span-2">
-            <CollectionCard collection={occasions[3]} href={`/shop?category=corporate`} delay={0.2} />
-          </div>
-          <div className="md:col-span-2">
-            <CollectionCard collection={occasions[4]} href={`/shop?category=wedding`} delay={0.25} />
-          </div>
-          <div className="md:col-span-4">
-            <CollectionCard
-              collection={occasions[5]}
-              href={`/shop?category=just-because`}
-              size="large"
-              delay={0.3}
-            />
-          </div>
+          ))}
+        </div>
+        <RevealOnScroll delay={0.2} className="mt-10">
+          <Link href="/events" className="btn btn-outline">
+            Start Planning an Event
+          </Link>
+        </RevealOnScroll>
+      </section>
+
+      {/* 04 — Paired With Giving */}
+      <section className="bg-espresso text-ivory py-28 md:py-40">
+        <div className="wrap grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <RevealOnScroll>
+            <p className="eyebrow text-champagne mb-5">The Pairing</p>
+            <h2 className="display-2 text-ivory mb-6">Every Event, Paired With a Gift.</h2>
+            <div className="text-ivory/75 leading-relaxed max-w-md space-y-4">
+              <p>
+                A beautifully designed event doesn't end when the last
+                guest leaves — it continues in what they take home. Every
+                celebration we design is paired with gifting: for the guest
+                of honour, the bridal party, the team that made it happen,
+                or the client on the other side of the table.
+              </p>
+              <p>
+                It's why Zioracadeau exists as one house, not two separate
+                businesses — the event and the gift are designed together,
+                from the same brief.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-4 mt-8">
+              <Link href="/events" className="btn btn-outline-light">
+                Plan an Event
+              </Link>
+              <Link href="/shop" className="btn-ghost text-ivory border-ivory/60 hover:text-champagne hover:border-champagne">
+                Explore Gifting
+              </Link>
+            </div>
+          </RevealOnScroll>
+          <RevealOnScroll delay={0.1}>
+            <PlaceholderImage label="Paired With Giving — an event's gifting moment, gift beside a place setting" aspect="aspect-[4/5]" />
+          </RevealOnScroll>
         </div>
       </section>
 
-      {/* 04 — The Zioracadeau Edit */}
-      <section className="bg-cream py-28 md:py-40">
+      {/* 05 — The Zioracadeau Edit */}
+      <section className="py-28 md:py-40">
         <div className="wrap">
           <SectionHeading eyebrow="Curated Collections" title="The Zioracadeau Edit" />
           <div className="mt-14 grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-8">
@@ -110,22 +140,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 05 — Featured Gifts */}
-      <section className="wrap py-28 md:py-40">
-        <div className="flex items-end justify-between flex-wrap gap-6">
-          <SectionHeading eyebrow="Shop the Edit" title="Gifts Worth Giving" />
-          <RevealOnScroll delay={0.1}>
-            <Link href="/shop" className="btn-ghost text-espresso">
-              View All Gifts
-            </Link>
-          </RevealOnScroll>
-        </div>
-        <div className="mt-14">
-          <ProductGrid products={featured} />
+      {/* 06 — Featured Gifts */}
+      <section className="bg-cream py-28 md:py-40">
+        <div className="wrap">
+          <div className="flex items-end justify-between flex-wrap gap-6">
+            <SectionHeading eyebrow="Shop the Edit" title="Gifts Worth Giving" />
+            <RevealOnScroll delay={0.1}>
+              <Link href="/shop" className="btn-ghost text-espresso">
+                View All Gifts
+              </Link>
+            </RevealOnScroll>
+          </div>
+          <div className="mt-14">
+            <ProductGrid products={featured} />
+          </div>
         </div>
       </section>
 
-      {/* 06 — Custom Gifting */}
+      {/* 07 — Custom Gifting */}
       <section className="wrap py-28 md:py-40">
         <EditorialSection
           eyebrow="Custom Gifting"
@@ -142,38 +174,41 @@ export default function HomePage() {
         </EditorialSection>
       </section>
 
-      {/* 07 — Custom Gift Process */}
+      {/* 08 — How It Works */}
       <section className="bg-cream py-28 md:py-40">
         <div className="wrap">
-          <SectionHeading eyebrow="How It Works" title="The Custom Gift Process" />
+          <SectionHeading eyebrow="How It Works" title="From Brief to Celebration" />
           <div className="mt-16">
             <ProcessSteps />
           </div>
         </div>
       </section>
 
-      {/* 08 — Corporate Gifting */}
+      {/* 09 — Corporate: Events & Gifting */}
       <section className="wrap py-28 md:py-40">
         <EditorialSection
-          eyebrow="Corporate Gifting"
-          title="Gifts That Represent Your Brand."
-          image="Corporate Gifting — branded gift presentation on a desk"
+          eyebrow="Corporate"
+          title={"Events and Gifts\nThat Represent Your Brand."}
+          image="Corporate — branded event and gift presentation"
           imageSide="left"
           cta="Enquire for Corporate Gifting"
           ctaHref="/corporate"
+          ctaSecondary="Enquire for Corporate Events"
+          ctaSecondaryHref="/events/corporate-events"
         >
           <p>
-            From client gifts to end-of-year appreciation, executive
-            welcomes to conference favours — we design gifting experiences
-            that reflect your brand as thoughtfully as you'd hope.
+            From client dinners to end-of-year appreciation, executive
+            welcomes to conference favours — we design corporate events and
+            corporate gifting that reflect your brand as thoughtfully as
+            you'd hope, together or on their own.
           </p>
           <p className="text-sm text-bark/80">
-            Teams · Clients · Executives · Weddings · Conferences · Events · Brand Activations
+            Teams · Clients · Executives · Launches · Galas · Conferences · Brand Activations
           </p>
         </EditorialSection>
       </section>
 
-      {/* 09 — Founder / Our Story */}
+      {/* 10 — Founder / Our Story */}
       <section className="bg-espresso text-ivory py-28 md:py-40">
         <div className="wrap grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <RevealOnScroll>
@@ -184,8 +219,8 @@ export default function HomePage() {
             <h2 className="display-2 text-ivory mb-6">The Story Behind Zioracadeau</h2>
             <div className="text-ivory/75 leading-relaxed max-w-md space-y-4">
               <p>[FOUNDER STORY GOES HERE — why the brand exists, in the founder's own words]</p>
-              <p>[INSERT PHILOSOPHY OF GIFTING AND MISSION]</p>
-              <p>[INSERT PERSONAL PERSPECTIVE ON WHAT MAKES A GIFT MEANINGFUL]</p>
+              <p>[INSERT PHILOSOPHY OF EVENTS AND GIFTING, AND WHY THEY'RE PAIRED]</p>
+              <p>[INSERT PERSONAL PERSPECTIVE ON WHAT MAKES A CELEBRATION — AND A GIFT — MEANINGFUL]</p>
             </div>
             <Link href="/about" className="btn btn-outline-light mt-8 inline-flex">
               Read Our Story
@@ -194,10 +229,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 10 — Emotional Statement */}
+      {/* 11 — Emotional Statement */}
       <section className="relative h-[80vh] min-h-[480px] w-full overflow-hidden">
         <PlaceholderImage
-          label="Emotional statement — a genuine reaction to receiving a gift"
+          label="Emotional statement — a genuine reaction, mid-celebration"
           aspect="aspect-auto"
           className="absolute inset-0 h-full w-full"
         />
@@ -205,14 +240,14 @@ export default function HomePage() {
         <div className="relative z-10 h-full flex items-center justify-center text-center">
           <RevealOnScroll className="wrap">
             <p className="display-1 text-ivory">It's Not About the Box.</p>
-            <p className="display-1 text-champagne mt-1">It's About the Reaction.</p>
+            <p className="display-1 text-champagne mt-1">It's About the Whole Moment.</p>
           </RevealOnScroll>
         </div>
       </section>
 
-      {/* 11 — Testimonials */}
+      {/* 12 — Testimonials */}
       <section className="wrap py-28 md:py-40">
-        <SectionHeading eyebrow="Testimonials" title="Words From Those Who Gift With Us" />
+        <SectionHeading eyebrow="Testimonials" title="Words From Those We've Celebrated With" />
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
           {testimonials.map((t, i) => (
             <Testimonial key={t.name + i} testimonial={t} delay={i * 0.1} />
@@ -220,11 +255,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 12 — Journal */}
+      {/* 13 — Journal */}
       <section className="bg-cream py-28 md:py-40">
         <div className="wrap">
           <div className="flex items-end justify-between flex-wrap gap-6">
-            <SectionHeading eyebrow="Reading" title="The Gifting Journal" />
+            <SectionHeading eyebrow="Reading" title="The Zioracadeau Journal" />
             <RevealOnScroll delay={0.1}>
               <Link href="/journal" className="btn-ghost text-espresso">
                 Visit the Journal
@@ -239,7 +274,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 13 — Instagram */}
+      {/* 14 — Instagram */}
       <section className="wrap py-28 md:py-40">
         <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
           <SectionHeading eyebrow="@zioracadeau" title="From the World of Zioracadeau" />
@@ -252,15 +287,15 @@ export default function HomePage() {
         <InstagramGrid />
       </section>
 
-      {/* 14 — Final CTA */}
+      {/* 15 — Final CTA */}
       <CTASection
         title={"Some Moments Deserve More\nThan “Happy Birthday.”"}
-        body="Let's create something they'll remember."
-        primaryLabel="Start Your Gift"
-        primaryHref="/custom-gift"
-        secondaryLabel="Shop Gifts"
-        secondaryHref="/shop"
-        image="Final CTA — dramatic full-screen gifting moment"
+        body="Let's design the celebration, and the gift that goes with it."
+        primaryLabel="Start Planning an Event"
+        primaryHref="/events"
+        secondaryLabel="Create a Gift"
+        secondaryHref="/custom-gift"
+        image="Final CTA — dramatic full-screen celebration and gifting moment"
       />
     </>
   );

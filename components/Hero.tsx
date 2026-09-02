@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section className="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
       <PlaceholderImage
-        label="Hero — a gift being presented, ribbon and hands, elegant lifestyle environment"
+        label="Hero — a styled celebration in progress, table setting and a gift being placed"
         aspect="aspect-auto"
         className="absolute inset-0 h-full w-full"
       />
@@ -22,16 +22,16 @@ export default function Hero() {
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="eyebrow text-champagne mb-6"
           >
-            Zioracadeau — A Gifting House
+            Zioracadeau — Events &amp; Gifting
           </motion.p>
 
           <motion.h1
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="display-1 text-ivory max-w-4xl"
+            className="display-1 text-ivory max-w-4xl whitespace-pre-line"
           >
-            The Art of Giving
+            {"Every Celebration, Designed.\nEvery Gift, Considered."}
           </motion.h1>
 
           <motion.p
@@ -40,7 +40,8 @@ export default function Hero() {
             transition={{ duration: 0.9, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className="mt-6 text-ivory/85 text-base md:text-lg max-w-md leading-relaxed"
           >
-            Thoughtfully curated gifts for moments worth remembering.
+            From weddings to corporate milestones, we design the moment —
+            and pair it with a gift worth giving.
           </motion.p>
 
           <motion.div
@@ -49,11 +50,11 @@ export default function Hero() {
             transition={{ duration: 0.9, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
             className="mt-10 flex flex-wrap gap-4"
           >
-            <Link href="/shop" className="btn btn-outline-light">
-              Explore the Collection
+            <Link href="/events" className="btn btn-outline-light">
+              Start Planning
             </Link>
-            <Link href="/custom-gift" className="btn-ghost text-ivory border-ivory/60 hover:text-champagne hover:border-champagne">
-              Create a Custom Gift
+            <Link href="/shop" className="btn-ghost text-ivory border-ivory/60 hover:text-champagne hover:border-champagne">
+              Explore Gifting
             </Link>
           </motion.div>
         </div>

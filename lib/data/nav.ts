@@ -1,9 +1,16 @@
 export const primaryNav = [
-  { label: "Shop", href: "/shop" },
-  { label: "Occasions", href: "/shop#occasions" },
+  { label: "Events", href: "/events" },
+  { label: "Gifting", href: "/shop" },
   { label: "Custom Gifts", href: "/custom-gift" },
   { label: "Our Story", href: "/about" },
   { label: "Journal", href: "/journal" },
+];
+
+export const footerEventLinks = [
+  { label: "Weddings", href: "/events/weddings" },
+  { label: "Celebrations", href: "/events/celebrations" },
+  { label: "Birthdays", href: "/events/birthdays" },
+  { label: "Corporate Events", href: "/events/corporate-events" },
 ];
 
 export const footerShopLinks = [
